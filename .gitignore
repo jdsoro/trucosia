@@ -1,0 +1,12 @@
+node_modules
+dist
+artifacts
+devserver.log
+devserver.err
+mobile-devserver.err
+.codex-remote-attachments
+.vercel
+.env
+.env.local
+.DS_Store
+*.log
