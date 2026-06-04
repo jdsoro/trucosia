@@ -39,7 +39,7 @@ export type TrickCategory = {
 
 export const categories: TrickCategory[] = [
   { id: "herramientas", label: "IA correcta", short: "Elegir herramienta", accent: "#0f8b8d" },
-  { id: "prompts", label: "Instrucciones listas", short: "Pedir mejor", accent: "#e2554f" },
+  { id: "prompts", label: "Prompts copy-paste", short: "Pedir mejor", accent: "#e2554f" },
   { id: "dictado", label: "Atajos de texto", short: "No teclear", accent: "#6b5dd3" },
   { id: "aprendizaje", label: "Estudiar", short: "Aprender rapido", accent: "#2f7d32" },
   { id: "contenido", label: "Contenido", short: "Crear piezas", accent: "#c46a14" },
@@ -319,7 +319,7 @@ function inferPayoff(categoryId: CategoryId): Payoff {
 
 function buildAction(title: string, categoryId: CategoryId): string {
   const actions: Record<CategoryId, string> = {
-    herramientas: "Elige una herramienta principal, una alternativa gratis y una situación donde no usar IA.",
+    herramientas: "Elige una herramienta principal, una alternativa gratis y una situacion donde no usar IA.",
     prompts: "Convierte una peticion vaga en una plantilla con tarea, contexto, formato, tono y limite.",
     dictado: "Captura la idea en bruto y pide una version limpia para el canal exacto donde la usaras.",
     aprendizaje: "Transforma el material en notas, preguntas, ejemplos y una prueba corta de recuperacion.",
@@ -328,7 +328,7 @@ function buildAction(title: string, categoryId: CategoryId): string {
     delegar: "Pega el material repetitivo y pide una salida estructurada que puedas revisar rapido.",
     visual: "Define objetivo visual, referencia, formato y restricciones antes de generar o editar.",
     secretos: "Configura una regla persistente para no repetir contexto en cada conversacion.",
-    vida: "Describe tu situación, restricciones y preferencia; pide un plan simple con seguimiento.",
+    vida: "Describe tu situacion, restricciones y preferencia; pide un plan simple con seguimiento.",
   };
 
   return `${actions[categoryId]} Foco: ${title}.`;
@@ -363,7 +363,7 @@ function buildPrompt(title: string, categoryId: CategoryId, tools: string[]): st
 
   return [
     `Actua como ${role[categoryId]}.`,
-    `Quiero aplicar el truco "${title}" a este caso: [describe aquí tu situación real].`,
+    `Quiero aplicar el truco "${title}" a este caso: [describe aqui tu situacion real].`,
     `Herramientas disponibles: ${tools.join(", ")}.`,
     `Devuelve ${output[categoryId]}.`,
     "Si falta informacion importante, haz primero un maximo de 3 preguntas.",
